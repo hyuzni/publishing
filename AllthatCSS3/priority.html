@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- 미디어쿼리에서 필수로 선언되어야하는 meta tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<title>priority - All that CSS3</title>
+	<link rel="stylesheet" href="./style.css" >
+</head>
+
+<body>
+	<h1>우선순위</h1>
+	<section>
+		<h2>선택자 우선순위</h2>
+		<div>
+			<ol>
+				<li>!important</li>
+				<li>Inline Style</li>
+				<li>Id Selector</li>
+				<li>Class Selector</li>
+				<li>tag Selector</li>
+			</ol>
+		</div>
+	</section>
+	<section>
+		<h2>CSS specificity</h2>
+		<div>
+			<ul>
+				<li>a : 인라인 스타일의 사용여부</li>
+				<li>b : ID 셀렉터의 수</li>
+				<li>c : 클래스, 속성, 가상요소 선택자의 수</li>
+				<li>d : 태그 선택자의 수</li>
+				<li>a,b,c,d 로 정렬했을 때 높은 수가 우선순위 지정</li>
+			</ul>
+		</div>
+	</section>
+	<section class="about">
+		가나다라마바사 미디어쿼리 테스트
+	</section>
+</body>
+
+</html>

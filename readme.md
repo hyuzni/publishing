@@ -13,4 +13,5 @@
 4. wordwrap (자동줄바꿈) 조정 : on
 5. auto save delay(자동 저장 딜레이) 조정 
  * 설정 단축키 ctrl + ,
-
+6. css 수정 시 full reload 방지(스크롤 탑 이동 방지)
+  : 설정 > 확장 > live server config > Full Reload 체크
