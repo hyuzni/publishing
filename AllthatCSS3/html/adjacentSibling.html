@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>adjacentSibling - All that CSS3</title>
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    ul ~ p {
+      text-decoration: underline;
+    }
+    ul ~ div > p {
+      color: red
+    }
+    ul ~ div > p + span {
+      color: lightcoral
+    }
+
+    input[type=radio]:checked + span {
+      color: blueviolet;
+      font-weight: 700
+    }
+    /* 인접형제 선택자는 +, ~ 로 적용할 수 있으며, 상위는 해당이 안되고 하위로만 적용이 된다. */
+  </style>
+</head>
+<body>
+  <h1>인접 형제 선택자</h1>
+  <section>
+    <ul>
+      <li>list 1</li>
+      <li>list 2</li>
+      <li>list 3</li>
+    </ul>
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <p>paragraph 3</p>
+    <div>
+      <p>paragraph in div</p>
+      <span>span next to paragraph</span>
+    </div>
+  </section>  
+
+  <section>
+    <input type="radio" name="grade"><span>초등학생</span>
+    <input type="radio" name="grade"><span>중학생</span>
+    <input type="radio" name="grade"><span>고등학생</span>
+    <input type="radio" name="grade"><span>대학생</span>
+  </section>
+</body>
+</html>

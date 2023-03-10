@@ -4,9 +4,25 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- 미디어쿼리에서 필수로 선언되어야하는 meta tag -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>priority - All that CSS3</title>
-	<link rel="stylesheet" href="./style.css" >
+  <link rel="stylesheet" href="../reset.css" >
+	<style>
+		section.about {
+			color: #fff;
+			background: crimson;
+		}
+
+		/* 모바일 영역 */
+		@media (max-width: 768px) {
+
+			/* media 쿼리 사용 시 선택자를 동일하게 맞춰야 적용이 됨. */
+			section.about {
+				color: #000;
+				background: yellowgreen;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -36,7 +52,7 @@
 		</div>
 	</section>
 	<section class="about">
-		가나다라마바사 미디어쿼리 테스트
+		section.about 미디어쿼리 테스트 영역
 	</section>
 </body>
 

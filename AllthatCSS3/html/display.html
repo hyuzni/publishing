@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>display - AllthatCSS3</title>
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    .elements span {
+      border: 1px solid #000;
+      width: 500px;
+      height: 1000px;
+      margin: 10px 20px; /* 좌우 마진만 적용됨 */
+      padding: 10px 20px;
+    }
+
+    .elements p {
+      border: 1px solid #000;
+      width: 300px;
+      height: 50px;
+      margin: 20px;
+      padding: 10px;
+      background: #ddd;
+    }
+
+    .elements button {
+      width: 300px;
+      height: 100px;
+      margin: 50px;
+    }
+
+    ul {
+      overflow: hidden;
+    }
+
+    ul li {
+      border: 1px solid #000;
+      float: left;
+      width: 150px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    ul + hr {
+      margin: 50px;
+    }
+
+    div > a {
+      border: 1px solid #000;
+      display: inline-block;
+      width: 150px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .card {
+      margin: 50px auto;
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 15px;
+      width: 400px;
+    }
+
+    .card h2 {
+      margin: 0;
+    }
+
+    .card p span {
+      display: block;
+      line-height: 22px;
+      display: list-item;
+      margin-left: 20px;
+    }
+
+    .card a {
+      display: block;
+      padding: 5px;
+      background-color: aquamarine;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .parent div {
+      border: 1px solid #000;
+      width: 200px;
+      height: 300px;
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+      line-height: 300px;
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+    .parent .child1 {
+      background-color: skyblue;
+    }
+    .parent .child2 {
+      background-color: gold;
+      /* display: none; */
+      visibility: hidden; /* 크기와 자리는 유지하지만 요소는 사라짐 */
+    }
+    .parent .child3 {
+      background-color: darkgray;
+      opacity: 0; /* 존재 자체는 유지한 채 투명도 조절로 보이지 않게 함 */
+    }
+
+    .parent div:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    Inline Elements(글자를 개별적으로 꾸미는 서식에 솬련된 태그들)
+    : span, a, small, big, em, u, ins, i, s, del, br, q, b, strong, mark, sub, sup, label, map, cite, abbr, time
+      컨텐츠의 너비 값, 한줄에 여러개 배치, 크기값, 상하마진을 가질 수 없음(padding 은 가능)
+   
+    Block Elements(레이아웃에 관련된 태그들, 목록 태그, 제목 태그, 테이블 관련, 시맨틱(semantic) 태그 들)
+    : div, p, table, blockqoute, ul, ol, li, dl, dd, table, tr, th, td, form, hr, h1~h6, header, nav, footer, main, section,
+      article, aside, figure, figcaption, summary, details, address
+      기본 너비 값 100%, 한줄에 하나 배치, 너비값, 높이값 가질 수 있고, 상하좌우 마진 가질 수 있음
+  
+    Inline Block Elements(이미지를 비롯한 대부분의 폼 요소)
+    : img, input, button, textarea, select, vidio, audio, iframe 등 대부분의 font icon tag
+     컨텐츠의 너비 값, 한줄에 여러개 배치, 너비값, 높이값 가질 수 있고, 상하좌우 마진 가질 수 있음
+
+    1) margin: auto 로 중앙정렬을 할 때는 block 요소만 가능.
+    2) inline 요소 또는 inline-block 요소의 중앙정렬은 부모요소에 text-align: center; 로 제어 가능
+    3) 모든 요소는 float 속성을 가지면 마진없는 inline-block 속성으로 변경됨. 
+    4) 모든 요소는 position: absolute 또는 fixed를 가지면 inline-block으로 속성이 변경됨.
+    5) inline 요소는 display: block 속성으로 변경하더라도 너비가 변경되지 않아 width: 100%;를 해줘야함. 
+    -->
+    <section>
+      <h2>elements</h2>
+      <div class="elements">
+        <span>inline element</span>
+        <span>inline element</span>
+        <span>inline element</span>
+        <span>inline element</span>
+        <p>block element</p>
+        <p>block element</p>
+        <p>block element</p>
+        <p>block element</p>
+        <button>inline-block element</button>
+        <button>inline-block element</button>
+        <button>inline-block element</button>
+        <button>inline-block element</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>list test</h2>
+      <ul>
+        <li><a href="#">list 01</a></li>
+        <li><a href="#">list 02</a></li>
+        <li><a href="#">list 03</a></li>
+        <li><a href="#">list 04</a></li>
+      </ul>
+      <hr>
+
+      <div>
+        <a href="#">a 01</a>
+        <a href="#">a 02</a>
+        <a href="#">a 03</a>
+        <a href="#">a 04</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Card Headline</h2>
+        <p>
+          <span>Job Position : web publisher</span>
+          <span>Email : hyuzni@gmail.com</span>
+          <span>Contect : +82 10-4496-6601</span>
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati amet autem molestias illo quas officiis hic sunt possimus dolorum maiores omnis unde saepe voluptate neque voluptatum illum vel, dicta quae quibusdam iure. Similique, est! Aperiam ipsam earum delectus explicabo.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+    </section>
+</body>
+</html>

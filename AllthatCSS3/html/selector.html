@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>box-sizing - All that CSS3</title>
+  <link rel="stylesheet" href="../reset.css" >
+	<style>
+		.frame {
+			border: 1px solid #eeeeee;
+			width: 300px;
+			margin-top: 50px;
+			overflow: hidden; /* 하위 개체가 float 속성을 가지고 있다면 overflow 속성으로 높이값 확보 */
+		}
+
+		.frame div {
+			border: 1px solid red;
+			float: left;
+			height: 100px;
+			width: 100px;
+		}
+		/* 
+			box-sizing 속성을 border-box로 지정 시 border의 넓이도 해당 개체의 width값에 포함하게 된다.
+			보통 reset.css 내에 전체 선택자에 선언이 되며, 모든 개체에 적용된다.
+			아래와 같은 경우, box들의 부모 개체인 .frame 도 해당 옵션이 적용이 되서 border의 넓이값이 포함되어 width값이 넘치게 된다.
+			이때, .frame 의 border 속성을 0px로 하거나 제거해주면 해결이 된다.
+		*/
+	</style>
+</head>
+
+<body>
+	<h1>box-sizing</h1>
+	<section>
+		<h2>box-sizing: border-box;</h2>
+		<div class="frame">
+			<div>box 1</div>
+			<div>box 2</div>
+			<div>box 3</div>
+		</div>
+	</section>
+</body>
+
+</html>

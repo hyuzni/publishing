@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box; /* border 의 넓이도 해당 개체의 width값에 포함이 됨 */
+  outline: none; /* border 바깥쪽으로 표시되는 선. 레이아웃에 관여하지 않음 */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif; /* button, inputbox 내에 font는 시스템 폰트 적용 */
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

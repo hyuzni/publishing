@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position - AllthatCSS3</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    :root {
+      --size: 200px;
+      /* css 변수선언 */
+    }
+
+    /* 
+    position : static(default), relative, absolute, fixed, sticky
+    absolute, fixed 속성을 가진 요소는 display: inline-block; 으로 변경 됨
+
+    부모요소 : relative, 자식요소 : absolute
+    absolute의 부모로 absolute가 될 수도 있음
+    부모요소의 absolute, relative 가 없을 시 body가 기준으로 최상단 부모요소가 됨.
+
+    position 속성이 없으면 left, top, right, bottom, z-index를 사용할 수 없음.
+
+    absolute : 요소가 절대적인 위치에 배치
+    relative : 요소가 상대적인 위치에 배치
+    fixed : 최초의 좌표에 고정
+    sticky : 스크롤 된 후 좌표로 고정됨
+      스크롤 발생 시 top으로 지정 된 위치부터 position: fixed; 속성으로 되어 고정됨
+      스크롤 위치가 부모의 요소에서 넘을 때 다시 position: relative; 속성으로 되어 고정이 풀리고 화면에서 사라짐
+
+    z-index가 같을 때 relative가 absolute보다 우선
+    z-index가 같을 때 absolute 요소가 2개 이상일 때 나중에 구현된 요소가 우선
+    */
+
+    body {
+      height: 200vh;
+      /* vh : viewport height */
+    }
+
+    header {
+      /* position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; */
+      /* z-index: 10; */
+      height: 100vh;
+    }
+
+    header .banner {
+      height: 120px;
+      background-color: blue;
+    }
+
+    header nav {
+      height: 80px;
+      background-color: pink;
+      position: sticky;
+      top: 0;
+    }
+
+    section {
+      position: relative;
+      height: 100vh;
+    }
+
+    .btn-top {
+      width: 80px;
+      height: 80px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      background-color: gray;
+    }
+
+    .item {
+      border: 1px solid #000;
+      width: var(--size);
+      height: var(--size);
+    }
+
+    .item:nth-child(1) {
+      position: static;
+    }
+
+    .item:nth-child(2) {
+      position: relative;
+      background-color: yellowgreen;
+      left: 100px;
+      top: 100px;
+    }
+
+    .item:nth-child(3) {
+      position: absolute;
+      background-color: crimson;
+      top: 0;
+      right: 0;
+    }
+
+    .box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: purple;
+    }
+
+    .box:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+
+    .box:nth-child(2) {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      /* left: calc(50% - 50px); */
+    }
+
+    .box:nth-child(3) {
+      top: 0;
+      right: 0;
+    }
+
+    .box:nth-child(4) {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .box:nth-child(5) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .box:nth-child(6) {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .box:nth-child(7) {
+      bottom: 0;
+      left: 0;
+    }
+
+    .box:nth-child(8) {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .box:nth-child(9) {
+      bottom: 0;
+      right: 0;
+    }
+
+    .parent {
+      border: 5px solid red;
+      width: 800px;
+      height: 500px;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    .parent > div {
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .parent [class^=inside] {
+      background-color: gold;
+    }
+    .parent [class^=outside] {
+      background-color: royalblue;
+    }
+    .inside1 {
+      left: 0;
+      top: 0;
+    }
+    .inside2 {
+      right: 0;
+      top: 0;
+    }
+    .inside3 {
+      bottom: 0;
+      left: 0;
+    }
+    .inside4 {
+      right: 0;
+      bottom: 0;
+    }
+    .outside1 {
+      top: 0;
+      right: 100%;
+    }
+    .outside2 {
+      bottom: 100%;
+      left: 0;
+    }
+    .outside3 {
+      right: 0;
+      bottom: 100%;
+    }
+    .outside4 {
+      left: 100%;
+      top: 0;
+    }
+    .outside5 {
+      bottom: 0;
+      left: 100%;
+    }
+    .outside6 {
+      top: 100%;
+      right: 0;
+    }
+    .outside7 {
+      top: 100%;
+      left: 0;
+    }
+    .outside8 {
+      bottom: 0;
+      right: 100%;
+    }
+
+    [class^=index] {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+    }
+
+    .index1 {
+      background-color: crimson;
+      color: #fff;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+    .index2 {
+      background-color: royalblue;
+      color: #fff;
+      left: 50px;
+      top: 50px;
+      z-index: 0;
+    }
+    .index3 {
+      position: relative;
+      background-color: yellow;
+      left: 100px;
+      top: 100px;
+      z-index: 0;
+    }
+
+    .card {
+      border: 1px solid #000;
+      border-radius: 15px;
+      padding: 20px;
+      width: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: blueviolet;
+      opacity: 0.3;
+      top: 0;
+      left: 0;
+    }
+    .card a {
+      float: right;
+      background: crimson;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="banner">This is banner area</div>
+    <nav>This is navigation area</nav>
+  </header>
+  <button class="btn-top">Go to top</button>
+
+  <section>
+    <ul class="items">
+      <li class="item">item 1</li>
+      <li class="item">item 2</li>
+      <li class="item">item 3</li>
+    </ul>
+
+  </section>
+
+  <section>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+  </section>
+
+  <section>
+    <div class="parent">
+      <div class="inside1">inside1</div>
+      <div class="inside2">inside2</div>
+      <div class="inside3">inside3</div>
+      <div class="inside4">inside4</div>
+      <div class="outside1">outside1</div>
+      <div class="outside2">outside2</div>
+      <div class="outside3">outside3</div>
+      <div class="outside4">outside4</div>
+      <div class="outside5">outside5</div>
+      <div class="outside6">outside6</div>
+      <div class="outside7">outside7</div>
+      <div class="outside8">outside8</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="index1">index1</div>
+    <div class="index2">index2</div>
+    <div class="index3">index3</div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Card Heading</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis consequuntur possimus iste in quae necessitatibus facilis et ducimus illo, ut maiores labore beatae accusamus laborum voluptate sunt! Laudantium, enim dicta? Blanditiis, numquam eius aut iure fugit qui similique ratione illo vero, ut, nemo sint tempora nesciunt aperiam veritatis praesentium cumque! Animi rem laboriosam repellendus ab, eligendi nobis officiis consequatur, nostrum suscipit, praesentium veritatis quibusdam omnis aliquid maxime ducimus provident eius sunt vero vitae optio esse? Hic fugiat quis, maxime officia ea delectus, provident dolorem velit ex ratione nihil excepturi, iure tenetur facilis earum illum modi beatae similique cupiditate natus temporibus?
+      </p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
+</body>
+
+</html>
