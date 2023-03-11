@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display2 - AllthatCSS3</title>
+    <link rel="stylesheet" href="../reset.css" >
+    <style>
+        hr {
+            margin: 20px;
+        }
+        
+        .display-list {
+            border: 1px solid #000;
+        }
+
+        .display-list a {
+            display: list-item;
+            list-style: square;
+            margin-left: 20px;
+            /* 
+            list-style-position: outside; 
+            list-style: square;
+            위치, 모양 따로 설정하기 보단, 
+            margin-left 넣고 list-style 을 활용하는 방안을 추천 
+            */
+        }
+
+        .display-table {
+            border: 1px solid #000;
+            display: table; /* inline-block */
+            width: 100%;
+            border-spacing: 10px;
+            table-layout: fixed; /* table-cell 의 속성을 가진 자식들의 너비를 다 같게 함 */
+        }
+        .display-table > li {
+            display: table-cell; /* table td 같은 속성 */
+            border: 1px solid #000;
+            height: 150px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h1>test</h1>
+    <div class="display-list">
+        <a href="#">Premier League</a>
+        <a href="#">Serie A League</a>
+        <a href="#">Ligue 1 League</a>
+        <a href="#">Bundesliga League</a>
+        <a href="#">La Liga League</a>
+    </div>
+    <hr>
+    <ul class="display-table">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+    <ul class="display-table">
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+        <li>item 8</li>
+    </ul>
+    <hr>
+</body>
+</html>

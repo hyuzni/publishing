@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- user-scalable : 사용자가 화면을 확대, 축소 할 수 있는지의 여부 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>box-model - AllthatCSS3</title>
+    <link rel="stylesheet" href="../reset.css" >
+    <style>
+        :root {
+            --width: 800px;
+        }
+        .box-model > * {
+            border: 1px solid #000;
+        }
+
+        .frame {
+            /* border: 5px solid #000; */
+            width: var(--width);
+            overflow: hidden;
+        }
+
+        .frame .item {
+            border: 3px solid red;
+            height: 300px;
+            width: calc(var(--width) /3);
+            float: left;
+        }
+
+        .about {
+            border: 1px solid #000;
+        }
+        .about h2 {
+            text-align: center;
+        }
+        .about .inner {
+            border: 1px solid red;
+            background: #ddd;
+            width: 1028px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .about .inner div {
+            border: 1px solid blue; 
+            float: left;
+            width: 50%;
+            height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .about .inner { 
+                width: 100%;
+            }
+            .about .inner div {
+                float: none;
+                width: 100%;
+                height: auto;
+            }
+            
+        }
+
+        .profile {
+            width: 300px;
+            margin: 50px auto;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 0 20px black;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile:before {
+            content:'';
+            width: inherit; /* inherit : 부모의 속성을 물려받음. overlay background object fit 에 사용 */
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            opacity: 0.1;
+        }
+        .profile .photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: auto;
+            background: url(../images/profile.png) no-repeat center #ddd;
+            background-size: cover;
+            box-shadow: 10px 10px 20px #ddd;
+        }
+
+        .profile a {
+            /* float: right; */
+            padding: 5px;
+            background: crimson;
+            color: #fff;
+            font-weight: 600;
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>박스모델 속성</h2>
+        <div class="box-model">
+            <span>span </span>
+            <div>div</div>
+            <button>button</button>
+        </div>
+
+        <div class="frame">
+            <div class="item">item 1</div>
+            <div class="item">item 2</div>
+            <div class="item">item 3</div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="about">
+            <h2>Section: About</h2>
+            <div class="inner">
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nesciunt rerum maiores incidunt obcaecati, eius cum placeat necessitatibus unde quisquam possimus, quo, quasi officiis ipsa architecto vero? Laboriosam labore accusantium vel excepturi consectetur eum iste illum corrupti enim voluptate consequuntur dolore officia ad iusto tenetur et, quasi hic pariatur saepe. Enim, vero maiores voluptate nihil non nostrum ad optio fugit reprehenderit eum voluptatum quisquam cum doloremque iure perferendis distinctio odit in atque laborum aliquid amet ullam accusantium repellendus molestias. Voluptatibus repellat aspernatur harum modi beatae aperiam hic temporibus nemo, laudantium neque perferendis illo reiciendis incidunt a? Alias itaque sequi quod, laboriosam quibusdam repudiandae cupiditate, ipsum eos voluptatem, consequatur
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nesciunt nemo iusto assumenda, qui ducimus nobis eaque ratione? Id, est, voluptas nam culpa recusandae incidunt nemo labore, ex delectus esse voluptatum sed laudantium. Esse quia pariatur sapiente hic dolore veritatis porro magni optio, quidem, iste eaque deleniti tempore deserunt? Illo aspernatur, 
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="profile">
+        <div class="photo">
+
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit modi amet consectetur cum nisi architecto qui, saepe dolor harum,
+        </p>
+        <a href="#">read more</a>
+    </div>
+</body>
+</html>

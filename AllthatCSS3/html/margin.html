@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin - AllthatCSS3</title>
+    <link rel="stylesheet" href="../reset.css" >
+    <style>
+        .margin-padding-frame {
+            border: 5px solid #000;
+        }
+        .item {
+            border: 5px solid red;
+            height: 100px;
+            padding: 30px;
+            margin: 30px;
+            display: inline-block;
+            box-sizing: content-box;
+        }
+
+        .parent {
+            border: 1px solid #000;
+            display: inline-block;
+        }
+        .parent .child {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            /* margin: 30px; */
+            margin: 50px 20px; /* margin: top right bottom left */
+        }
+    </style>
+</head>
+<body>
+    <div class="margin-padding-frame">
+        <div class="item">item 01</div>
+        <div class="item">item 02</div>
+        <div class="item">item 03</div>
+    </div>
+
+    <div class="parent">
+        <div class="child">child</div>
+    </div>
+</body>
+</html>

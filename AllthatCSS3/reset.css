@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
 
 * {
-  box-sizing: border-box; /* border 의 넓이도 해당 개체의 width값에 포함이 됨 */
+  box-sizing: border-box; /* border 의 넓이도 해당 개체의 width값에 포함이 됨, 기본값은 content-box */
   outline: none; /* border 바깥쪽으로 표시되는 선. 레이아웃에 관여하지 않음 */
 }
 

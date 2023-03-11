@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table - AllthatCSS3</title>
+    <link rel="stylesheet" href="../reset.css" >
+    <style>
+        /* 
+        border-collapse, table-layout 속성은 table tag나, display: table 속성을 가진 요소에만 적용이 된다.
+        */
+        .crew {
+            border-collapse: collapse;
+            /* table-layout: fixed; */
+            width: 600px;
+            margin: 20px;
+            /* empty-cells: hide; */
+        }
+        /* table 제목 */
+        .crew caption.headline {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .crew caption.info {
+            font-size: 10px;
+            caption-side: bottom;
+            margin-top: 10px;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        /* .crew caption span:first-child {
+            float: left;
+        }
+        .crew caption span:last-child {
+            float: right;
+        } */
+        .crew tr:not(:last-child) {
+            border-bottom: 1px solid #ddd;
+        }
+        .crew th,
+        .crew td {
+            vertical-align: middle;
+            height: 32px;
+        }
+        .crew th {
+            background-color: #000;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+        .crew td:first-child {
+            width: 15%;
+            text-align: left;
+            font-weight: 600;
+            text-indent: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="crew">
+        <caption class="headline">Crew list in 2023</caption>
+        <caption class="info">the above employees are ecellent emplyees.</caption>
+        <!-- <caption>
+            <span>
+                1
+            </span>
+            <span>
+                Crew list in 2023
+            </span>
+        </caption> -->
+        <tr>
+            <th>#</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Handle</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
