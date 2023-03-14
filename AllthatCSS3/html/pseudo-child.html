@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>child - AllthatCSS3</title>
+  <script src="https://kit.fontawesome.com/de96a20e28.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    
+    div :nth-child(1){
+      color: red;
+    }
+    div :nth-child(2){
+      color: blue;
+    }
+    div :nth-child(3){
+      color: limegreen;
+    }
+
+    div h2:nth-child(1){
+      color: red;
+    }
+    div h2:nth-child(2){
+      color: blue;
+    }
+    div h2:nth-child(3){
+      color: limegreen;
+    }
+
+    .basic li:nth-child(even) {
+      background-color: red;
+    }
+    .basic li:nth-child(odd) {
+      background-color: yellow;
+    }
+
+    table.employee {
+      background: #fff;
+      width: 700px;
+      table-layout: fixed;
+      border-collapse: collapse;
+      
+    }
+    table.employee td,
+    table.employee th {
+      padding: 5px;
+      text-align: center;
+    }
+    table.employee tr {
+      transition: 0.5s;
+    }
+    table.employee tr:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+    table.employee tr:nth-child(odd) {
+      background-color: #eee;
+    } 
+    table.employee tr:hover {
+      background-color: #ccc;
+    }
+    table.employee th {
+      background-color: limegreen;
+      color: #fff;
+    }
+    table.employee caption {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+    table.employee tr td:first-child {
+      font-weight: bold;
+    }    
+    table.employee tr td:last-child {
+      color: royalblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, cupiditate eveniet. Nisi voluptatibus dolore repudiandae obcaecati, voluptas, neque, aut nesciunt ea officia distinctio explicabo aliquid alias natus eligendi inventore fugiat numquam. Dolores et atque hic commodi quos. Accusamus autem hic, consectetur eaque molestias praesentium minima expedita velit deserunt odio ad dolor provident facere. Tempora repudiandae cum at quaerat reiciendis inventore velit recusandae, sed eos earum harum aspernatur animi! Recusandae fugiat totam earum impedit odio est neque eos, iure perspiciatis amet maiores sunt, facilis non ad mollitia repudiandae eius dolor? Quae adipisci enim quod autem officiis eos odit similique beatae. Magnam!
+    </p>
+    <h2>첫번째 헤드라인 요소</h2>
+    <h2>두번째 헤드라인 요소</h2>
+    <h2>세번째 헤드라인 요소</h2>
+  </div>
+
+  <ul class="basic">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+    <li>666</li>
+  </ul>
+  
+  <table class="employee">
+    <caption>Employee of the Month</caption>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+    <tr>
+      <td>hyuzni</td>
+      <td>hyuzni@gmail.com</td>
+      <td>+82-10-4496-6601</td>
+    </tr>
+    <tr>
+      <td>hyunjin</td>
+      <td>hyunjin@gmail.com</td>
+      <td>+82-10-3691-1730</td>
+    </tr>
+    <tr>
+      <td>alice</td>
+      <td>hyunjin5670@gmail.com</td>
+      <td>+82-10-499-3691</td>
+    </tr>
+    <tr>
+      <td>hyuzni</td>
+      <td>hyuzni@gmail.com</td>
+      <td>+82-10-4496-6601</td>
+    </tr>
+    <tr>
+      <td>hyunjin</td>
+      <td>hyunjin@gmail.com</td>
+      <td>+82-10-3691-1730</td>
+    </tr>
+    <tr>
+      <td>alice</td>
+      <td>hyunjin5670@gmail.com</td>
+      <td>+82-10-499-3691</td>
+    </tr>
+    <tr>
+      <td>hyuzni</td>
+      <td>hyuzni@gmail.com</td>
+      <td>+82-10-4496-6601</td>
+    </tr>
+    <tr>
+      <td>hyunjin</td>
+      <td>hyunjin@gmail.com</td>
+      <td>+82-10-3691-1730</td>
+    </tr>
+    <tr>
+      <td>alice</td>
+      <td>hyunjin5670@gmail.com</td>
+      <td>+82-10-499-3691</td>
+    </tr>
+  </table>
+</body>
+</html>

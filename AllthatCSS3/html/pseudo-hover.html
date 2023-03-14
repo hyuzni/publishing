@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hover - AllthatCSS3</title>
+  <script src="https://kit.fontawesome.com/de96a20e28.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    /* 
+    a:link : 링크 방문하기 전
+    a:visited : 링크 방문 후
+    a:hover : 링크에 마우스 올렸을 때
+    a:active : 링크 클릭하고 마우스를 떼지 않은 상태
+
+    :before
+    :after
+    
+    ::placeholder
+    */
+    .frame a {
+      text-decoration: none;
+      display: block;
+      font-weight: 700;
+    }
+    .frame a:link {
+      color: #000;
+      font-size: 20px;
+    }
+    .frame a:visited {
+      color: green;
+      font-size: 15px;
+    }
+    .frame a:hover {
+      background: crimson;
+    }
+    .frame a:active {
+      background: blue;
+      color: #fff;
+    }
+
+    .buttons {
+      margin: 20px;
+    }
+    .btn {
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-transform: capitalize; /* 첫 단어 대문자 변환 */
+      color: #fff;
+      background-color: #00a8ff;
+      display: inline-block;
+      text-align: center;
+      width: 160px;
+      font-size: 12px;
+      transition: 0.3s; /* hover가 아닌 선택자에 줘야함 */
+    }
+    .btn:hover {
+      opacity: 0.7;
+      font-weight: 700;
+    }
+    .success {
+      background-color: #4cd137;
+    }
+    .warning {
+      background-color: #fbcc31;
+    }
+    .error {
+      background-color: #fb3e31;
+    }
+
+    section {
+      margin: 50px;
+    }
+    section a {
+      display: inline-block;
+      text-align: center;
+      padding: 5px 10px;
+    }
+
+    section a.download {
+      text-decoration: none;
+      font-size: 18px;
+      background-color: #00d3d3;
+      color: #fff;
+      padding: 7px 15px;
+      border-radius: 5px;
+      transition: 0.4s;
+    }
+    section a.download:hover {
+      background-color: #01a3a4;
+    }
+    section a.download:hover > i {
+      transform: translateX(-5px);
+    }
+    section a.download:active {
+      transform: scale(0.95); /* inline 요소에는 적용이 안됨 */
+      box-shadow: 2px 2px 10px #000;
+    }
+    section a.download > i {
+      transform: translate(-31px, 3px);
+      transition: 0.4s;
+    }
+    .dropdown {
+      border: 1px solid #000;
+      width: 150px;
+    }
+    .dropdown .dropdown-btn {
+      width: 100%;
+      background-color: #3e8e41;
+      border: 1px solid #000;
+      color: #fff;
+      padding: 8px 10px;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown .dropdown-content {
+      display: none;
+    }
+    .dropdown .dropdown-content a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      line-height: 24px;
+    }
+    .dropdown .dropdown-content a:hover {
+      background: #ccc;
+    }
+
+
+    section.tour {
+      width: 320px;
+    }
+
+    section.tour .tour-item:hover .tour-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    section.tour .tour-item {
+      position: relative;
+      border: 1px solid #000;
+    }
+
+    section.tour .tour-item .tour-title {
+      font-size: 14px;
+      text-align: center;
+      color: #fff;
+      font-weight:600;
+      background-color: red;
+      line-height: 32px;
+      margin: 0;
+    }
+    section.tour .tour-item .tour-content {
+      padding: 15px;
+      box-shadow: 5px 5px 10px #cccccc;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      transition: 1s;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    section.tour .tour-item p {
+      margin: 0; 
+      font-size: 14px;
+    }
+    section.tour .tour-item .tour-photo {
+      margin-top: 15px;
+    }
+    section.tour .tour-item .tour-photo:hover a {
+      background: crimson;
+      opacity: 1;
+    }
+    section.tour .tour-item .tour-photo img {
+      display: block;
+      width: 100%;
+    }
+    section.tour .tour-item .tour-photo a {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: #000;
+      opacity: 0.8;
+      color: #fff;
+      font-weight: 400;
+      font-size: 12px;
+      border-radius: 10px 0 0 0;
+    }
+    section.tour .tour-item .tour-photo a span {
+      display: inline-block;
+      transition: 1s;
+    }
+    section.tour .tour-item .tour-photo a:hover span {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <a href="#none" target="_blank">링크 방문하기 전</a>
+    <a href="http://www.naver.com" target="_blank">링크 방문 후</a>
+    <a href="#none" target="_blank">링크에 마우스 올렸을 때</a>
+    <a href="#none" target="_blank">링크 클릭하고 마우스를 때지 않은 상태</a>
+  </div>
+
+  <div class="buttons">
+    <a href="#" class="btn">normal link</a>
+    <a href="#" class="btn success">confirm link</a>
+    <a href="#" class="btn warning">warning link</a>
+    <a href="#" class="btn error">error link</a>
+    <a href="#" class="btn critical-error">critical-error link</a>
+  </div>
+
+  <section>
+    <h2>가상클래스 download button 생성</h2>
+    <a href="#" class="download">
+      <i class="fas fa-arrow-right"></i>
+      download coupon
+    </a>
+  </section>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Real Estate Type</button>
+    <div class="dropdown-content">
+      <a href="#">All</a>
+      <a href="#">One room</a>
+      <a href="#">1.5 room</a>
+      <a href="#">Two room</a>
+      <a href="#">Three</a>
+      <a href="#">Officetel</a>
+      <a href="#">Aprtment</a>
+    </div>
+  </div>
+
+  <section class="tour">
+    <article class="tour-item">
+      <h2 class="tour-title">Raft the Grand Canyon Arizona, USA</h2>
+      <div class="tour-content">
+        <p>
+          It's time to start exploring! To see the great gorge from a completely defferent - and rare - angle.
+          Looking down on the squiggle of the Colorado River from a mile up on the rocky rim,
+          it seems impossible that this river could have carved the gargantuan Grand Canyon.
+        </p>
+        <div class="tour-photo">
+          <img src="../images/tour-photo.jpg" alt="tour">
+          <a href="#"><span>Start your Adventure</span></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <p>1231231231231313</p>
+</body>
+</html>
