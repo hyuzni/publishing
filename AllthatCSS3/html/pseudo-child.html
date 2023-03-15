@@ -75,6 +75,47 @@
       color: royalblue;
     }
 
+    .items {
+      margin: 60px 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .items .item {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .items .item p {
+      color: #000;
+    }
+    .items .item a {
+      display: block;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px;
+      color: #000;
+    }
+    .items .item:nth-child(1) a {
+      background-color: limegreen;
+    }
+    .items .item:nth-child(2) a {
+      background-color: crimson;
+    }
+    .items .item:nth-child(3) a {
+      background-color: royalblue;
+    }
+
+    .frame p:nth-of-type(1) {
+      color: crimson;
+    }
+
+    /* 
+    :nth-last-child() - 같은 레벨(형제)요소 그룹 중에서 뒹서 부터 인수로 지정된 위치 값으로 요소를 선택자로 사용한다.
+    :nth-last-of-type() - 같은 레벨(형제)요소 그룹 내에서 선택자와 동일한 타입을 기준으로 뒤에서 부터의 위치 값을 인수로 지정해 해당되는 요소를 선택자로 사용한다.
+    :only-child - 동등 레벨(형제)이 없는 단일 요소를 선택자로 사용한다.
+    :only-of-type - 선택자와 동일한 타입으로서 동등 레벨(형제)이 없는 단일 요소인 경우에만 선택자로 사용된다.
+    :first-of-type - 같은 레벨(형제) 관계 요소 그룹 중에서 선택자와 동일한 타입의 첫 번째 요소를 선택자로 사용한다.
+    :last-of-type - 같은 레벨(형제) 관계 요소 그룹 중에서 선택자와 동일한 유형의 마지막 요소를 선택자로 사용한다.
+    */
   </style>
 </head>
 <body>
@@ -149,5 +190,37 @@
       <td>+82-10-499-3691</td>
     </tr>
   </table>
+
+  <div class="items">
+    <div class="item">
+      <h2>item heading #01</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, nesciunt dolores rem maxime tenetur quaerat voluptatibus animi impedit alias minus. Animi, at aperiam et non adipisci ipsam impedit repellendus reprehenderit iste facere, aliquam nobis incidunt tempora voluptatum nisi perferendis itaque recusandae natus numquam cupiditate laborum quo aliquid minus! Dolor, deleniti.
+      </p>
+      <a href="#">read more..</a>
+    </div>
+    <div class="item">
+      <h2>item heading #02</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, nesciunt dolores rem maxime tenetur quaerat voluptatibus animi impedit alias minus. Animi, at aperiam et non adipisci ipsam impedit repellendus reprehenderit iste facere, aliquam nobis incidunt tempora voluptatum nisi perferendis itaque recusandae natus numquam cupiditate laborum quo aliquid minus! Dolor, deleniti.
+      </p>
+      <a href="#">read more..</a>
+    </div>
+    <div class="item">
+      <h2>item heading #03</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, nesciunt dolores rem maxime tenetur quaerat voluptatibus animi impedit alias minus. Animi, at aperiam et non adipisci ipsam impedit repellendus reprehenderit iste facere, aliquam nobis incidunt tempora voluptatum nisi perferendis itaque recusandae natus numquam cupiditate laborum quo aliquid minus! Dolor, deleniti.
+      </p>
+      <a href="#">read more..</a>
+    </div>
+  </div>
+
+  <div class="frame">
+    <h1>Text in H1</h1>
+    <p>Text in p1</p>
+    <p>Text in p2</p>
+    <p>Text in p3</p>
+    <p>Text in p4</p>
+  </div>
 </body>
 </html>
