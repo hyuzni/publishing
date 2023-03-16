@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYUZNI - profile</title>
+  <script src="https://kit.fontawesome.com/de96a20e28.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../reset.css" >
+  
+  <style>
+    body {
+      background-color: #bee1fd;
+    }
+    section.profile {
+      width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px 5px #666; /* x y blur spread color */
+      padding: 70px 10px 10px 10px;
+      background: #fff;
+      line-height: 1.6em;
+      font-size: 0.8em;
+      position: relative;
+      margin: 100px auto;
+    }
+    section.profile .face {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    section.profile .face:hover {
+      width: 130px;
+      height: 130px;
+    }
+    section.profile h2 {
+      font-weight: 500;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    section.profile .content {
+      margin: 20px;
+      letter-spacing: -1px;
+    }
+    section.profile .content ul li {
+      padding: 5px 0;
+    }
+    section.profile .content ul li:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+    section.profile .content ul li > span {
+      font-weight: 700;
+      width: 90px;
+      display: inline-block;
+    }
+    section.profile .introduce {
+      letter-spacing: 0;
+    }
+    section.profile .introduce strong {
+      display: block;
+      font-size: 1.2em;
+      line-height :1.7em;
+    }
+    section.profile .introduce em {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+    section.profile .introduce a {
+      display: block;
+      background-color: royalblue;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      line-height: 3em;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+    section.profile .introduce p:last-child{
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="profile">
+      <img class="face" src="../images/student.jpg" alt="profile image" >
+      <h2>HYUNJIN JANG</h2>
+      <div class="content">
+        <ul>
+          <li><span>Birth</span> Jan, 01, 1993</li>
+          <li><span>Age</span> 30 years old</li>
+          <li><span>E-mail</span> aaa@bbb.ccc</li>
+          <li><span>Phone</span> +82-10-1111-2222</li>
+          <li><span>Occupation</span> Front-end Web publisher</li>
+          <li><span>Address</span>abcdefg hijklmn</li>
+        </ul>
+        <div class="introduce">
+          <p>
+            <strong>What I do ?</strong>
+            I worked at a web agency as a UI/UX designer for about 7 years and as a <em>Front-end Web Publisher</em>
+            for last 7 hears. As a Front-end publisher. I published vaious coding websites made with <em>variable skills.</em>
+          </p>
+          <a href="#">contect me</a>
+          <p>I look forward to new projects with good people. thank you.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
