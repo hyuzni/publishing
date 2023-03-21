@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bullet - AllthatCSS3</title>
+  <script src="https://kit.fontawesome.com/de96a20e28.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../plugin/XEIcon-2.2.0/xeicon.min.css" >
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    h1 {
+      font-size: 24px;
+      margin: auto;
+      display: block;
+    }
+    h1:before {
+      content: '★';
+      color: crimson;
+      margin-right: 5px;
+    }
+    h1:after {
+      content: '#01';
+      color: #fff;
+      background: royalblue;
+      margin-left: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      vertical-align: middle;
+      padding: 2px 4px;
+      line-height: 24px;
+    }
+    .football {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+    }
+    .football li:before {
+      content: '\26BD';
+      margin-right: 5px;
+      font-size: 12px;
+      line-height: 18px;
+      transform: translateY(-20%);
+      display: inline-block;
+    }
+    .football li.update:before {
+      content: '\26A1';
+    }
+
+    .coffee-list li:before {
+      content: '\2615';
+      margin-right: 5px;
+      font-size: 12px;
+      transform: translateY(-15%);
+      display: inline-block;
+    }
+    .coffee-list li.hit {
+      font-weight: 600;
+    }
+    .coffee-list li.soldout {
+      color: #ccc;
+      text-decoration: line-through;
+    }
+    .coffee-list li.hit:after,
+    .coffee-list li.soldout:after {
+      margin-left: 5px;
+      font-size: 12px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+    .coffee-list li.hit:after {
+      content: 'hit!';
+      color: crimson;
+    }
+    .coffee-list li.soldout:after {
+      content: 'soldout';
+      color: royalblue;
+    }
+
+    .skills {
+      list-style: none;
+      padding: 0;
+    }
+    .skills li:before {
+      content: '\f007';
+      font-family: fontawesome;
+      margin-right: 5px;
+      transform: trnaslateY(5px);
+    }
+
+    .arrows li:before {
+      font-family: xeicon;
+      margin-right: 5px;
+    }
+    .arrows li:first-child:before {
+      content: '\e906';
+    }
+    .arrows li:nth-child(2):before {
+      content: '\e907';
+    }
+    
+    .arrows li:nth-child(3):before {
+      content: '\e915';
+    }
+    
+    .arrows li:last-child:before {
+      content: '\e905';
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    utf-8 Symbols
+    https://www.w3schools.com/charsets/ref_utf_symbols.asp
+    위 url 안에서 쓰고싶은 심볼의 hex 코드를 가져와서 '\'+hex 로 쓰면 text 형식의 아이콘으로 사용 가능 
+
+    Font Awesome | Bootstrap Cheat Sheets
+    https://fontawesome.com/
+    로그인하고 개인별 kits 코드를 받아서 script 선언을 해줘야 함
+    홈페이지에서 원하는 아이콘의 unicode 를 복사해서 '\'+unicode 로 text 형식으로 쓸 수 있고
+    홈페이지에서 제공하는 tag를 가져와서 사용할 수 있음.
+    font-family: fontawesome 이 설정되어 있어야 함
+
+    XEICON  
+    http://xpressengine.github.io/XEIcon/index.html
+    cdn을 사용할수도 있고 plugin 을 다운받아서 선언하고 사용. 방법은 홈페이지에 명시
+    library에서 검색하고 아이콘에 해당되는 클래스명을 복사해서 사용 후 개발자 도구를 통해 unicode를 찾아 사용
+    unicode로 사용 시 마찬가지로 font-family: xeicon 선언 필요.
+  -->
+  <header>
+    <h1>title bullet test</h1>
+  </header>
+  <nav>
+    <ul class="football">
+      <li class="update">프리미어리그</li>
+      <li>분데스리가</li>
+      <li>라리가</li>
+      <li>리그앙</li>
+      <li>세리에이</li>
+    </ul>
+  </nav>
+  <main>
+    <div class="container">
+      <section>
+        <h2>coffee</h2>
+        <ul class="coffee-list">
+          <li>Nitro Cold Brew</li>
+          <li>Caffeine Free</li>
+          <li>Iced Coffee</li>
+          <li class="soldout">Specialty Coffee</li>
+          <li class="hit">Brewed Coffee</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>skills</h2>
+        <ul class="skills">
+          <li>html5</li>
+          <li>css3</li>
+          <li>flex</li>
+          <li>grid</li>
+          <li>scss(sass)</li>
+          <li>jquery</li>
+          <li>javascript</li>
+          <li>css frameworks</li>
+        </ul>
+      </section>
+
+      
+      <section>
+        <h2>arrows</h2>
+        <ul class="arrows">
+          <li>left
+            <i class="xi-arrow-left"></i>
+          </li>
+          <li>right
+            <i class="xi-arrow-right"></i>
+          </li>
+          <li>up
+            <i class="xi-arrow-up"></i>
+          </li>
+          <li>down
+            <i class="xi-arrow-down"></i>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
