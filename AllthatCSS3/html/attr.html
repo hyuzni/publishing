@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>attr - AllThatCSS3</title>
+  <script src="https://kit.fontawesome.com/de96a20e28.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    /* 
+    - property : css 속성
+    background-color, color, font-size 등
+    - attribute : html 속성
+    href, target 등
+    - 사용자 정의 속성 : 제작자가 임의로 만든 속성
+    <a href="#none" target="_blank" data-text="test">...</a>
+    선택자:before {
+      content: attr(data-text); -> 'test' 로 들어감
+    }
+    */
+    
+    .notice {
+      display: inline-block; /* notice 내부 아이콘에 크기에 맞추기 위한 설정 */
+      margin: 100px;
+      position: relative;
+    }
+    .notice:before {
+      content: attr(data-count);
+      position: absolute;
+      top: -20%;
+      right: -20%;
+      border-radius: 50%;
+      background: red;
+      padding: 5px;
+      color: #fff;
+      font-size: 40px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      vertical-align: middle;
+    }
+    .notice .far {
+      padding: 0;
+      font-size: 100px;
+    }
+
+    .swap-btn a.cool-btn {
+      text-transform: uppercase;
+      border: 1px solid #000;
+      width: 200px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      display: block;
+      margin: 20px auto;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .swap-btn a.cool-btn:before,
+    .swap-btn a.cool-btn:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: 0.35s;
+    }
+    .swap-btn a.cool-btn:before {
+      content: attr(data-event);
+      background-color: crimson;
+      top: 0;
+      left: 0;
+    }
+    .swap-btn a.cool-btn:after {
+      content: attr(data-text);
+      background-color: royalblue;
+      top: 100%;
+      left: 0;
+    }
+    .swap-btn a.cool-btn:hover:before {
+      top: -100%;
+    }
+    .swap-btn a.cool-btn:hover:after {
+      top: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="notice" data-count="12">
+    <i class="far fa-bell"></i>
+  </div>
+
+  <div class="swap-btn">
+    <a class="cool-btn" href="#" data-text="join to class" data-event="20% discount"></a>
+  </div>
+</body>
+</html>

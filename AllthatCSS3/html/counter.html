@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>counter - AllthatCSS3</title>
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    /* 
+    counter-reset: 카운터이름 시작값;
+    ex) counter-reset: item 10;
+    * 시작값을 지정하지 않으면 1에서 시작
+    * 상위요소에 선언(가급적 부모요소에 선언)
+
+    counter-increment: 카운터이름 증감간격;
+    ex) counter-increment: number 5;
+    * 증감간격을 지정하지 않으면 1에서 증가
+    * :before, :after 에서 선언
+
+    content: counter(카운터이름);
+    ex) content: counter(number);
+    * :before, :after 에서 선언
+
+    content: '문자열' counter(카운터이름);
+    ex) content: 'No. ' counter(카운터이름) ' item' -> 'No. 1 item' 노출
+    */
+    ul.coffee-list {
+      list-style: none;
+      font-size: 18px;
+      line-height : 20px;
+      vertical-align: middle;
+      counter-reset: numbering;
+    }
+
+    ul.coffee-list li:before {
+      counter-increment: numbering;
+      content: counter(numbering);
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: crimson;
+      border-radius: 50%;
+      text-align: center;
+      vertical-align: middle;
+      color: #fff;
+      font-size: 12px;
+      transform: translateX(-2px)
+    }
+
+    .index-links {
+      counter-reset: index 10;
+      line-height: 2em;
+    }
+    .index-links a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+    }
+    .index-links a:before {
+      counter-increment: index;
+      content: '섹션.' counter(index) '-';
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: bolder;
+    }
+    .index-links a:after {
+      content: '['attr(data-must)'이론]';
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .index-links a:hover {
+      text-decoration: underline;
+      color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+  <ul class="coffee-list">
+    <li>Nitro Cold brew</li>
+    <li>Caffeine Free</li>
+    <li>Iced Coffee</li>
+    <li>Specialty Coffee</li>
+    <li>Brewed Coffee</li>
+    <li>Iced Americano</li>
+  </ul>
+  <ol class="coffee-list">
+    <li>Nitro Cold brew</li>
+    <li>Caffeine Free</li>
+    <li>Iced Coffee</li>
+    <li>Specialty Coffee</li>
+    <li>Brewed Coffee</li>
+    <li>Iced Americano</li>
+  </ol>
+
+  <div class="index-links">
+    <a href="#" data-must="필수">첫번째 강의명</a>
+    <a href="#" data-must="필수">두번째 강의명</a>
+    <a href="#" data-must="선택">세번째 강의명</a>
+    <a href="#" data-must="필수">네번째 강의명</a>
+    <a href="#" data-must="선택">다섯번째 강의명</a>
+  </div>
+</body>
+</html>

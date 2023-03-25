@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>header UI - AllthatCSS3</title>
+  <script src="https://kit.fontawesome.com/de96a20e28.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../reset.css" >
+  <style>
+    .review {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      margin: 0;
+      text-align: center;
+      font-size: 38px;
+      font-weight: 500;
+    }
+    .review:before {
+      content: '{';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ccc;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .review:after {
+      content: '}';
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #ccc;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .review span {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .review span:before {
+      content: '\f004';
+      font-family: fontawesome;
+      color: crimson;
+      animation: heart 0.7s linear infinite;
+      display: inline-block;
+    }
+    .review p {
+      margin: 0;
+      font-weight: 700;
+    }
+    .review strong {
+      color: crimson;
+    }
+    @keyframes heart {
+      0% { transform: scale(0.7); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(0.7); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="review">
+      <span>희망을 품게 하는 퍼블리싱 강의</span>
+      <p>코딩웍스 인프런 수강생 <strong>생생</strong> 후기</p>
+    </div>
+  </header>
+</body>
+</html>
